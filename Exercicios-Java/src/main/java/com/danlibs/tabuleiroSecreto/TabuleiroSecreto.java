@@ -7,7 +7,7 @@ public class TabuleiroSecreto {
         Scanner scan = new Scanner(System.in);
 
         int N, numeroOperacoes, operacao, selecao, valor;
-        Integer numeroMaisFrequenteLinha = 0, numeroMaisFrequenteColuna = 0;
+        Integer numeroMaisFrequenteLinha, numeroMaisFrequenteColuna;
         N = scan.nextInt();
         int[][] tabuleiro = new int[N][N];
         numeroOperacoes = scan.nextInt();
@@ -50,7 +50,7 @@ public class TabuleiroSecreto {
                             numerosQueMaisAparecem.add(entry.getKey());
                         }
                     }
-                    numeroMaisFrequenteLinha = numerosQueMaisAparecem.stream().mapToInt(n -> n).max().getAsInt();
+                    numeroMaisFrequenteLinha = Collections.max(numerosQueMaisAparecem);
                     System.out.println(numeroMaisFrequenteLinha);
                     break;
                 case 4:
@@ -74,7 +74,7 @@ public class TabuleiroSecreto {
                             numerosQueMaisAparecem.add(entry.getKey());
                         }
                     }
-                    numeroMaisFrequenteColuna = numerosQueMaisAparecem.stream().mapToInt(v -> v).max().getAsInt();
+                    numeroMaisFrequenteColuna = Collections.max(numerosQueMaisAparecem);
                     System.out.println(numeroMaisFrequenteColuna);
                     break;
             }
